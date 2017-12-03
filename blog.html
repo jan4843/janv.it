@@ -1,0 +1,28 @@
+---
+layout: default
+permalink: blog/
+---
+
+<main>
+	<ul class="post-list">
+		{% for post in site.posts %}
+		<li>
+			<a class="title" href="{{post.url}}">{{post.title}}</a>
+			<small class="details">
+				<time>{{post.date | date: '%e %b %Y'}}</time>
+			</small>
+		</li>
+		{% endfor %}
+	</ul>
+</main>
+
+<section>
+	<h1 class="modern">More</h1>
+	<ul class="menu">
+		<li>
+			<a href="{{site.url}}{{site.baseurl}}/blog/feed.xml">Subscribe</a>
+			<small class="details inline">RSS</small>
+		</li>
+	</ul>
+	{% include search.html %}
+</section>

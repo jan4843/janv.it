@@ -1,0 +1,24 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+	<head>
+		{% include head.html %}
+	</head>
+	<body>
+		<nav id="site-nav">
+			<h1>
+				<a href="{{site.baseurl}}/">{{site.title}}</a>
+			</h1>
+			<nav>
+				{% include nav.html %}
+			</nav>
+		</nav>
+		{{content}}
+		<footer id="site-footer">
+			{% include footer.html %}
+		</footer>
+	</body>
+</html>

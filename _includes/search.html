@@ -1,0 +1,23 @@
+<form role="search" method="GET" action="https://duckduckgo.com/">
+	<input type="hidden" name="kl" value="wt-wt">	<!-- No region -->
+	<input type="hidden" name="kz" value="-1">		<!-- No Instant Answers -->
+	<input type="hidden" name="kf" value="-1">		<!-- No Favicon -->
+	<input type="hidden" name="kaf" value="1">		<!-- Full URLs -->
+
+	<input type="hidden" name="kj" value="#333">	<!-- Header color -->
+	<input type="hidden" name="ky" value="-1">		<!-- No Highlight -->
+	<input type="hidden" name="kx" value="#777">	<!-- URLs color -->
+	<input type="hidden" name="k8" value="#000">	<!-- Text color -->
+	<input type="hidden" name="k9" value="#000">	<!-- Link color -->
+	<input type="hidden" name="kaa" value="#000">	<!-- Visited link color -->
+
+	<input type="hidden" name="ks" value="t">		<!-- Size -->
+	<input type="hidden" name="ka" value="g">		<!-- Link font -->
+	<input type="hidden" name="kt" value="g">		<!-- Text font -->
+
+	<input type="hidden" name="k1" value="-1">		<!-- No ads -->
+
+	<input type="hidden" name="sites" value="{{site.url | remove:'https://' | remove:'http://'}}">
+	<input name="q" placeholder="Search this site" style="width: 10em" required>
+	<input type="submit" value="Search">
+</form>

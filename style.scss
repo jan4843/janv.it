@@ -1,0 +1,14 @@
+---
+---
+
+$body-width: 700px;
+$font-size: 20px;
+$min-font-size: 16px;
+$font-main: Georgia, serif;
+$font-modern: Verdana, Geneva, sans-serif;
+$font-code: Menlo, "DejaVu Sans Mono", monospace;
+
+@import "classes";
+@import "elements";
+@import "sections";
+@import "syntax";
