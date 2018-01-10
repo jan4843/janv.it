@@ -1,9 +1,0 @@
-<figure>
-	{% if include.url contains '://' %}
-		{% assign image_url = include.url %}
-	{% else %}
-		{% capture image_url %}{{site.baseurl}}/images/{{include.url}}{% endcapture %}
-	{% endif %}
-    <img src="{{image_url}}" alt="{{include.alt}}">
-    <figcaption>{{include.caption}}</figcaption>
-</figure>
