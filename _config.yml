@@ -21,6 +21,11 @@ collections:
   pages:
     output: true
 
+exclude:
+  - CNAME
+  - '*.taskpaper'
+  - '*.sublime-project'
+
 defaults:
   - scope:
       path: '_posts'
