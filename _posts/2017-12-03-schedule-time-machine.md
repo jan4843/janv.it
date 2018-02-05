@@ -28,4 +28,4 @@ tmutil startbackup --auto --block
 diskutil unmount 9821D40D-2812-9843-3448-2712B2E19327
 ```
 
-I am doing this with two Keyboard Maestro macros ([one that triggers at login]({{site.baseurl}}/media/kmmacro-unmount-hdd.png) and [the other at 4 AM every day]({{site.baseurl}}/media/kmmacro-back-up-with-time-machine.png)), but you can easily do it with [Launch Agents](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html).
+I am doing this with two Keyboard Maestro macros ([one that triggers at login]({{ site.baseurl }}/media/kmmacro-unmount-hdd.png) and [the other at 4 AM every day]({{ site.baseurl }}/media/kmmacro-back-up-with-time-machine.png)), but you can easily do it with [Launch Agents](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html).

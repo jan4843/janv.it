@@ -7,9 +7,9 @@ permalink: blog/
 	<ul class="post-list">
 		{% for post in site.posts %}
 		<li>
-			<a class="title" href="{{post.url}}">{{post.title}}</a>
+			<a class="title" href="{{ post.url }}">{{ post.title }}</a>
 			<small class="details">
-				<time>{{post.date | date: '%e %b %Y'}}</time>
+				<time>{{ post.date | date: '%e %b %Y' }}</time>
 			</small>
 		</li>
 		{% endfor %}
