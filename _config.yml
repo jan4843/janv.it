@@ -23,15 +23,12 @@ collections:
 
 exclude:
   - CNAME
-  - '*.taskpaper'
-  - '*.sublime-project'
 
 defaults:
   - scope:
       path: '_posts'
     values:
       layout: post
-      
   - scope:
       path: '_pages'
     values:
