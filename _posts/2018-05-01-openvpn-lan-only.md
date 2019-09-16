@@ -1,6 +1,5 @@
 ---
 title: Route only local IPs with OpenVPN
-description: Access your home network without forwarding all internet traffic
 ---
 
 At home I’ve a Raspberry Pi set up with OpenVPN to access my devices at home without exposing them directly to the internet with port forwarding.
