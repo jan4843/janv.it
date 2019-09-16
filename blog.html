@@ -1,17 +1,26 @@
 ---
 layout: default
 permalink: blog/
+title: Blog
 ---
 
-<main>
-	<ul class="post-list">
-		{% for post in site.posts %}
-		<li>
-			<a class="title" href="{{ post.url }}">{{ post.title }}</a>
-			<small class="details">
-				<time>{{ post.date | date: '%e %b %Y' }}</time>
-			</small>
-		</li>
-		{% endfor %}
-	</ul>
-</main>
+<ul class="menu">
+	{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+		<br>
+		<small class="metadata">
+			<time datetime="{{ post.date | date: '%F' }}" date-style="medium">{{ post.date | date_to_string }}</time>
+		</small>
+	</li>
+	{% endfor %}
+</ul>
+<hr>
+<ul class="menu">
+	<li>
+		<a href="{{ '/blog/feed.xml' | absolute_url }}">
+			{% include icons/rss.svg %}
+			<span>Subscribe</span>
+		</a>
+	</li>
+</ul>

@@ -1,5 +1,4 @@
 title: Jan Vitturi
-
 lang: en
 url: https://janv.it
 baseurl: ''
@@ -8,29 +7,15 @@ permalink: blog/:title
 author:
   name: Jan Vitturi
   email: vitturi.jan@gmail.com
-  twitter: jan4843
 
-sass:
-  style: compressed
-
-compress_html:
-  clippings: all
-  comments: ["<!--", "-->"]
-
-collections:
-  pages:
-    output: true
-
-exclude:
-  - CNAME
+nav:
+  - title: About
+    url: /
+  - title: Blog
+    url: /blog/
 
 defaults:
   - scope:
-      path: '_posts'
+      type: posts
     values:
-      layout: post
-  - scope:
-      path: '_pages'
-    values:
-      layout: page
-      permalink: :slug
+      layout: article
