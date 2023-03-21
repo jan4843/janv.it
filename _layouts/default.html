@@ -13,7 +13,10 @@
 	<link rel="alternate" type="application/atom+xml" title="Blog" href="{{ '/blog/feed.xml' | absolute_url }}">
 	<link rel="canonical" href="{{ page.url | absolute_url }}">
 	<style type="text/css">
-		{% capture style %}{% include style.scss %}{% endcapture %}
+		{% capture style %}
+		{% include style.scss %}
+		{% include syntax.scss %}
+		{% endcapture %}
 		{{ style | scssify }}
 	</style>
 </head>
