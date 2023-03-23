@@ -1,24 +1,20 @@
-RUBY_VERSION = $(shell curl -fs https://pages.github.com/versions.json | sed -E 's/.*"ruby":\s*"([^"]+).*/\1/')
-IMAGE := github-pages
-
-.SILENT:
-
 serve: image
 	docker container run \
 		--rm \
 		--name $(notdir $(CURDIR)) \
 		--volume $(CURDIR):/data:ro \
+		--workdir /data \
 		--publish 4000:4000 \
-		$(IMAGE)
+		--entrypoint jekyll \
+		github-pages \
+		serve --destination=/tmp/_site --host=
 
 image:
-	docker image inspect $(IMAGE) >/dev/null 2>&1 || \
+	docker image inspect github-pages >/dev/null 2>&1 || \
 	docker image build \
 		--no-cache \
-		--tag $(IMAGE) \
-		--build-arg RUBY_VERSION=$(RUBY_VERSION) \
-		.
+		--tag github-pages \
+		https://github.com/actions/jekyll-build-pages.git#main
 
 clean:
-	$(RM) -r _site Gemfile.lock
-	-docker image rm $(IMAGE)
+	-docker image rm github-pages
