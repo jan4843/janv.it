@@ -1,6 +1,4 @@
----
-title: Disable Shortcuts automations notifications
----
+# Disable Shortcuts automations notifications
 
 iOS 13.1 brought automations to Shortcuts but one thing changed from the early betas of iOS 13: it is no longer possible to disable notifications for the Shortcuts app from Settings. This means every time an automation with ‘Ask Before Running’ disabled is triggered, it will show a confirmation notification that then stays in the Notification Center.
 

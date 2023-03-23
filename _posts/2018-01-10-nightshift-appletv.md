@@ -1,6 +1,4 @@
----
-title: “NightShift” on Apple TV
----
+# “NightShift” on Apple TV
 
 I don’t actually know if using NightShift brings me any real benefit, but I enable it anyway on iOS and macOS because once you get used to it, it’s difficult to go back to the blue light during the night.  
 However, the device I use before going to bed is my Apple TV and there is no NightShift there.

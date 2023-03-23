@@ -1,6 +1,4 @@
----
-title: Storing Postgres container databases as files for easier backups
----
+# Storing Postgres container databases as files for easier backups
 
 In [my servers setup](https://github.com/jan4843/infrastructure), each service gets its own directory in `/opt` with a Docker Compose file. Static configuration files go in `/opt/$SERVICE/config`. When a services produces some data it needs to maintain its state, that is also stored in `/opt/$SERVICE/data`. This way, each service is encapsulated and can, for example, be moved to another host simply by moving its directory (and a `docker compose up`). More importantly, services can easily be backed up.
 

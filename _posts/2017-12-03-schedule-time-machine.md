@@ -1,6 +1,4 @@
----
-title: Schedule Time Machine to mount your hard drive
----
+# Schedule Time Machine to mount your hard drive
 
 I love the simplicity of Time Machine but I also hate having a loud hard drive constantly spinning. What I would hate even more is plugging and unplugging the USB every time I want to backup my Mac. (And you never *want* to backup your stuff, you just want it to happen automatically.)  
 

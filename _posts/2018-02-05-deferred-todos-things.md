@@ -1,6 +1,4 @@
----
-title: Deferred to-dos in Things
----
+# Deferred to-dos in Things
 
 After a long time with OmniFocus I am trying Things 3 again. I do enjoy the design, like anyone using the app would, but a few things are missing for me: defer dates and sequential projects.
 

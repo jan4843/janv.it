@@ -5,5 +5,9 @@ permalink: blog/:title
 plugins:
   - jekyll-default-layout
   - jekyll-feed
+  - jekyll-titles-from-headings
 feed:
   path: blog/feed.xml
+titles_from_headings:
+  strip_title: true
+  collections: true
