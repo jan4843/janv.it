@@ -1,54 +1,36 @@
----
----
-
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
-<head>
-	<meta charset="utf-8">
-	<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-	<meta name="author" content="{{ site.author.name }}">
-	<meta name="date" content="{{ page.date | date_to_xmlschema }}">
-	<meta name="description" content="{{ page.description }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="alternate" type="application/atom+xml" title="Blog" href="{{ '/blog/feed.xml' | absolute_url }}">
-	<link rel="canonical" href="{{ page.url | absolute_url }}">
-	<style type="text/css">
-		{% capture style %}
-		{% include style.scss %}
-		{% include syntax.scss %}
-		{% endcapture %}
-		{{ style | scssify }}
-	</style>
-</head>
-<body>
-	<header id="site-header">
-		<h1>
-			<a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-		</h1>
-		<nav>
-		{% for item in site.nav %}
-			{% assign class = 'active' %}
-			{% if item.url != page.url %}
-				{% assign item_parts = item.url | split: '/' %}
-				{% assign page_parts = page.url | relative_url | split: '/' %}
-				{% assign i = 0 %}
-				{% for part in item_parts %}
-					{% if item_parts[i] != page_parts[i] %}
-						{% assign class = '' %}
-					{% endif %}
-					{% assign i = i | plus: 1 %}
-				{% endfor %}
-				{% if i == 0 and item.url != page.url %}
-					{% assign class = '' %}
-				{% endif %}
-			{% endif %}
-			<a class="{{ class }}" href="{{ item.url }}">{{ item.title }}</a>
-		{% endfor %}
-		</nav>
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.author }}{% endif %}</title>
+<meta name="created" content="{{ page.date | date_to_xmlschema }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" type="application/atom+xml" title="Blog" href="{{ '/blog/feed.xml' | absolute_url }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+	{% capture style %}
+	{% include style.scss %}
+	{% include syntax.scss %}
+	{% endcapture %}
+	{{ style | scssify }}
+</style>
+
+<header id="site-header">
+	<h1>
+		<a href="/">{{ site.author }}</a>
+	</h1>
+	<nav>
+		{% assign components = page.url | split: '/' %}
+		<a class="{% if page.url == '/' %}active{% endif %}" href="/">About</a>
+		<a class="{% if components[1] == 'blog' %}active{% endif %}" href="/blog/">Blog</a>
+	</nav>
+</header>
+<section>
+	<header>
+		<h1>{{ page.title }}</h1>
+		{% if page.date %}
+		<p class="metadata">
+			<time datetime="{{ page.date | date: '%F' }}" date-style="long">{{ page.date | date_to_long_string }}</time>
+		</p>
+		{% endif %}
 	</header>
-	<main>
-		{{ content }}
-	</main>
-	<script>{% include script.js %}</script>
-</body>
-</html>
+	{{ content }}
+</section>
+<script>{% include script.js %}</script>

@@ -1,21 +1,4 @@
-title: Jan Vitturi
-lang: en
-url: https://janv.it
-baseurl: ''
+author: Jan Vitturi
 permalink: blog/:title
-
-author:
-  name: Jan Vitturi
-  email: vitturi.jan@gmail.com
-
-nav:
-  - title: About
-    url: /
-  - title: Blog
-    url: /blog/
-
-defaults:
-  - scope:
-      type: posts
-    values:
-      layout: article
+plugins:
+  - jekyll-default-layout

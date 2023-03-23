@@ -1,6 +1,4 @@
 ---
-layout: default
-permalink: /
 social:
   - name: GitHub
     url: https://github.com/jan4843
@@ -25,4 +23,4 @@ I am a graduate software engineer from Italy living in Austria. My interests inc
 {% endfor %}
 </ul>
 
-Email me at <{{ site.author.email }}>.
+Email me at <vitturi.jan@gmail.com>.

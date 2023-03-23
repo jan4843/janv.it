@@ -105,12 +105,8 @@ hr {
 
 img,
 video {
-	max-width: 100%;
-
-	article > p > & {
-		max-width: calc(100% + 2 * #{$inset-size});
-		@include full-width;
-	}
+	max-width: calc(100% + 2 * #{$inset-size});
+	@include full-width;
 }
 
 pre {
