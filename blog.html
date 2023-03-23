@@ -9,7 +9,7 @@ permalink: blog/
 		<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
 		<br>
 		<small class="metadata">
-			<time datetime="{{ post.date | date: '%F' }}" date-style="medium">{{ post.date | date_to_string }}</time>
+			<time>{{ post.date | date_to_string }}</time>
 		</small>
 	</li>
 	{% endfor %}
