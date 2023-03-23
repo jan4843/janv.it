@@ -1,4 +1,9 @@
+title: Jan Vitturi
 author: Jan Vitturi
+url: https://janv.it
 permalink: blog/:title
 plugins:
   - jekyll-default-layout
+  - jekyll-feed
+feed:
+  path: blog/feed.xml

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.author }}{% endif %}</title>
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="created" content="{{ page.date | date_to_xmlschema }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="alternate" type="application/atom+xml" title="Blog" href="{{ '/blog/feed.xml' | absolute_url }}">
@@ -14,7 +14,7 @@
 
 <header id="site-header">
 	<h1>
-		<a href="/">{{ site.author }}</a>
+		<a href="/">{{ site.title }}</a>
 	</h1>
 	<nav>
 		{% assign components = page.url | split: '/' %}
