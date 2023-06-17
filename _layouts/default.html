@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="created" content="{{ page.date | date_to_xmlschema }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="alternate" type="application/atom+xml" title="Blog" href="{{ '/blog/feed.xml' | absolute_url }}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style type="text/css">
-	{% capture style %}
-	{% include style.scss %}
-	{% include syntax.scss %}
-	{% endcapture %}
-	{{ style | scssify }}
+<meta name="created" content="{{ page.date | date_to_xmlschema }}">
+<meta name="viewport" content="width=device-width">
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		line-height: 1.4;
+		margin: 0 auto;
+		max-width: 36em;
+		padding: 0 8px;
+	}
+	a:visited {
+		color: blueviolet;
+	}
+	img {
+		max-width: 100%;
+	}
+	code {
+		font-family: ui-monospace, monospace;
+	}
+	pre {
+		background-color: whitesmoke;
+		font-size: 0.9rem;
+		overflow: auto;
+		padding: 8px;
+		tab-size: 4;
+	}
+	{% include syntax.css %}
 </style>
 
-<header id="site-header">
-	<h1>
+{% if page.date %}
+<nav>
+	<p>
 		<a href="/">{{ site.title }}</a>
-	</h1>
-	<nav>
-		{% assign components = page.url | split: '/' %}
-		<a class="{% if page.url == '/' %}active{% endif %}" href="/">About</a>
-		<a class="{% if components[1] == 'blog' %}active{% endif %}" href="/blog/">Blog</a>
-	</nav>
-</header>
-<section>
-	<header>
-		<h1>{{ page.title }}</h1>
-		{% if page.date %}
-		<p class="metadata">
-			<time>{{ page.date | date_to_long_string }}</time>
-		</p>
-		{% endif %}
-	</header>
+	</p>
+</nav>
+{% endif %}
+
+<main>
+	<h1>{{ page.title }}</h1>
+	<time>{{ page.date | date: '%Y-%m-%d' }}</time>
 	{{ content }}
-</section>
+</main>
